@@ -2,7 +2,7 @@ import cv2
 import PIL.Image
 import google.generativeai as genai
 
-genai.configure(api_key="AIzaSyBq2nc05mUMNpuyQMsW-j69L7Qtl-Chf0A")
+genai.configure(api_key="MINHA KEYY")
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 image_path = "Captura2.png"

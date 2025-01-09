@@ -1,11 +1,12 @@
 import cv2
 import PIL.Image
 import google.generativeai as genai
+from docx import Document
 
-genai.configure(api_key="MINHA KEYY")
+genai.configure(api_key="INSIRA A KEY")
 model = genai.GenerativeModel("gemini-1.5-flash")
 
-image_path = "Captura2.png"
+image_path = "hobbit.jpg"
 image = cv2.imread(image_path)
 
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -16,9 +17,20 @@ cv2.imwrite("imagem_processada.png", thresh)
 
 
 text = PIL.Image.open("imagem_processada.png")
-response = model.generate_content(["O que está escrito?", text])
+response = model.generate_content(["O que está escrito? apenas transcreva o texto sem comentar nada", text])
 print(response.text)
 
+doc = Document()
+style = doc.styles['Normal']
+font = style.font
+font.name = 'Times New Roman'
+text_doc = response.text
+
+doc.add_paragraph(text_doc)
+
+doc.save("document.docx")
+
+print("Convertido com sucesso!")
 
 
 

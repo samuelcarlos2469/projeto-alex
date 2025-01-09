@@ -6,7 +6,7 @@ import google.generativeai as genai
 from docx import Document
 
 # Configurar a API generativa
-genai.configure(api_key="AIzaSyBq2nc05mUMNpuyQMsW-j69L7Qtl-Chf0A")
+genai.configure(api_key="insira key")
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 # Configurar o Flask

@@ -3,10 +3,10 @@ import PIL.Image
 import google.generativeai as genai
 from docx import Document
 
-genai.configure(api_key="INSIRA A KEY")
+genai.configure(api_key="insira key")
 model = genai.GenerativeModel("gemini-1.5-flash")
 
-image_path = "hobbit.jpg"
+image_path = "pano.jpg"
 image = cv2.imread(image_path)
 
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -18,7 +18,6 @@ cv2.imwrite("imagem_processada.png", thresh)
 
 text = PIL.Image.open("imagem_processada.png")
 response = model.generate_content(["O que está escrito? apenas transcreva o texto sem comentar nada", text])
-print(response.text)
 
 doc = Document()
 style = doc.styles['Normal']

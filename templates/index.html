@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de Arquivos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Conversão de Arquivos</h1>
+        <h2>Escolha uma opção para começar:</h2>
+        <a href="/img_to_doc" class="button">Imagem para Documento</a>
+        <a href="/pdf_to_doc" class="button">PDF para Documento</a>
+    </div>
+    <div class="footer">
+        <img src="{{ url_for('static', filename='images/ifms_logo.png') }}" alt="Logo IFMS" class="logo">
+    </div>
+</body>
+</html>
